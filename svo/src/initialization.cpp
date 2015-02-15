@@ -133,6 +133,7 @@ void trackKlt(
     vector<Vector3d>& f_cur,
     vector<double>& disparities)
 {
+
   const double klt_win_size = 30.0;
   const int klt_max_iter = 30;
   const double klt_eps = 0.001;
@@ -162,6 +163,8 @@ void trackKlt(
     }
     f_cur.push_back(frame_cur->c2f(px_cur_it->x, px_cur_it->y));
     disparities.push_back(Vector2d(px_ref_it->x - px_cur_it->x, px_ref_it->y - px_cur_it->y).norm());
+    // cout << "f cur " << f_cur[f_cur.size()-1] << endl;
+    // cout << "disparity " << disparities[disparities.size() -1] << endl;
     ++px_ref_it;
     ++px_cur_it;
     ++f_ref_it;

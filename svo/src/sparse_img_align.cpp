@@ -69,8 +69,6 @@ size_t SparseImgAlign::run(FramePtr ref_frame, FramePtr cur_frame)
   }
   cur_frame_->T_f_w_ = T_cur_from_ref * ref_frame_->T_f_w_;
 
-
-
   return n_meas_/patch_area_;
 }
 

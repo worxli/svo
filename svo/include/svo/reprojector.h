@@ -93,7 +93,10 @@ private:
   void initializeGrid(vk::AbstractCamera* cam);
   void resetGrid();
   bool reprojectCell(Cell& cell, FramePtr frame);
-  bool reprojectPoint(FramePtr frame, Point* point);
+  bool reprojectPoint(FramePtr frame, Point* point, int print);
+
+  //lukas BA
+  ofstream outfile;
 };
 
 } // namespace svo

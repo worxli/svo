@@ -45,7 +45,7 @@ public:
 
 BenchmarkNode::BenchmarkNode()
 {
-  cam_ = new vk::PinholeCamera(752, 480, 315.5, 315.5, 376.0, 240.0);
+  cam_ = new vk::PinholeCamera(640, 480, 315.5, 315.5, 376.0, 240.0);
   vo_ = new svo::FrameHandlerMono(cam_);
   vo_->start();
 }
@@ -58,12 +58,16 @@ BenchmarkNode::~BenchmarkNode()
 
 void BenchmarkNode::runFromFolder()
 {
-  for(int img_id = 2; img_id < 188; ++img_id)
+  for(int img_id = 0; img_id < 62; ++img_id)
   {
+
     // load image
     std::stringstream ss;
-    ss << svo::test_utils::getDatasetDir() << "/sin2_tex2_h1_v8_d/img/frame_"
-       << std::setw( 6 ) << std::setfill( '0' ) << img_id << "_0.png";
+    ss << "/home/worxli/Datasets/data/img/color"
+       << img_id << ".png";
+
+	cout << ss.str() << endl;
+	
     if(img_id == 2)
       std::cout << "reading image " << ss.str() << std::endl;
     cv::Mat img(cv::imread(ss.str().c_str(), 0));
@@ -80,6 +84,7 @@ void BenchmarkNode::runFromFolder()
                   << "Proc. Time: " << vo_->lastProcessingTime()*1000 << "ms \n";
 
     	// access the pose of the camera via vo_->lastFrame()->T_f_w_.
+	std::cout << vo_->lastFrame()->T_f_w_ << endl;
     }
   }
 }

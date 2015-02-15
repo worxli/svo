@@ -34,6 +34,7 @@ Reprojector::Reprojector(vk::AbstractCamera* cam, Map& map) :
     map_(map)
 {
   initializeGrid(cam);
+  outfile.open ("/home/worxli/Datasets/data/depthunscaled.txt");
 }
 
 Reprojector::~Reprojector()
@@ -98,7 +99,7 @@ void Reprojector::reprojectMap(
       if((*it_ftr)->point->last_projected_kf_id_ == frame->id_)
         continue;
       (*it_ftr)->point->last_projected_kf_id_ = frame->id_;
-      if(reprojectPoint(frame, (*it_ftr)->point))
+      if(reprojectPoint(frame, (*it_ftr)->point, 0))
         overlap_kfs.back().second++;
     }
   }
@@ -107,11 +108,14 @@ void Reprojector::reprojectMap(
   // Now project all point candidates
   SVO_START_TIMER("reproject_candidates");
   {
+    // cout << "start repro" << endl;
+    outfile << "repro: ";
+    outfile << frame->id_ << " ";
     boost::unique_lock<boost::mutex> lock(map_.point_candidates_.mut_);
     auto it=map_.point_candidates_.candidates_.begin();
     while(it!=map_.point_candidates_.candidates_.end())
     {
-      if(!reprojectPoint(frame, it->first))
+      if(!reprojectPoint(frame, it->first, 1))
       {
         it->first->n_failed_reproj_ += 3;
         if(it->first->n_failed_reproj_ > 30)
@@ -123,6 +127,8 @@ void Reprojector::reprojectMap(
       }
       ++it;
     }
+    // cout << "stop repro" << endl;
+    outfile << "\n";
   } // unlock the mutex when out of scope
   SVO_STOP_TIMER("reproject_candidates");
 
@@ -203,11 +209,21 @@ bool Reprojector::reprojectCell(Cell& cell, FramePtr frame)
   return false;
 }
 
-bool Reprojector::reprojectPoint(FramePtr frame, Point* point)
+bool Reprojector::reprojectPoint(FramePtr frame, Point* point, int print)
 {
+  // point->pos_[2] = point->pos_[2] * 600;
   Vector2d px(frame->w2c(point->pos_));
   if(frame->cam_->isInFrame(px.cast<int>(), 8)) // 8px is the patch size in the matcher
   {
+
+    // cout << "point pos" << point->pos_ << endl;
+    // cout << "px" << px << endl;
+    if(print)
+      // cout << "repro" << endl;
+
+    if(print)
+      outfile << round(px[0]) << " " << round(px[1]) << " " << point->pos_[2] << " ";
+
     const int k = static_cast<int>(px[1]/grid_.cell_size)*grid_.grid_n_cols
                 + static_cast<int>(px[0]/grid_.cell_size);
     grid_.cells.at(k)->push_back(Candidate(point, px));

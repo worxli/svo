@@ -3,8 +3,9 @@
 
 SET(TRACE TRUE)
 SET(HAVE_G2O FALSE) 
-SET(USE_ROS TRUE) # Set FALSE if you want to build this package without Catkin
+SET(USE_ROS FALSE) # Set FALSE if you want to build this package without Catkin
 SET(DEBUG_OUTPUT FALSE) # Only relevant if build without ROS
+set(OpenCV_LIBS opencv_core opencv_imgproc opencv_highgui opencv_calib3d)
 
 ################################################################################
 
@@ -133,6 +134,12 @@ TARGET_LINK_LIBRARIES(test_feature_align svo)
 
 ADD_EXECUTABLE(test_pipeline test/test_pipeline.cpp)
 TARGET_LINK_LIBRARIES(test_pipeline svo)
+
+ADD_EXECUTABLE(pipeline test/pipelineBA.cpp)
+TARGET_LINK_LIBRARIES(pipeline svo)
+
+ADD_EXECUTABLE(unscale test/unscale.cpp)
+TARGET_LINK_LIBRARIES(unscale ${OpenCV_LIBS})
 
 ADD_EXECUTABLE(test_matcher test/test_matcher.cpp)
 TARGET_LINK_LIBRARIES(test_matcher svo)

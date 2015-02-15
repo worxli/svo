@@ -174,6 +174,9 @@ bool getSceneDepth(const Frame& frame, double& depth_mean, double& depth_min)
     if((*it)->point != NULL)
     {
       const double z = frame.w2f((*it)->point->pos_).z();
+      const double x = frame.w2f((*it)->point->pos_).x();
+      const double y = frame.w2f((*it)->point->pos_).y();
+      // cout << "x: " << x << " y: " << y << " z: " << z << endl;
       depth_vec.push_back(z);
       depth_min = fmin(z, depth_min);
     }
