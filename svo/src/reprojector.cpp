@@ -79,6 +79,8 @@ void Reprojector::reprojectMap(
 
   // Reproject all mappoints of the closest N kfs with overlap. We only store
   // in which grid cell the points fall.
+  // outfile << "repro: ";
+  // outfile << frame->id_ << " ";
   size_t n = 0;
   overlap_kfs.reserve(options_.max_n_kfs);
   for(auto it_frame=close_kfs.begin(), ite_frame=close_kfs.end();
@@ -103,6 +105,7 @@ void Reprojector::reprojectMap(
         overlap_kfs.back().second++;
     }
   }
+  // outfile << "\n";
   SVO_STOP_TIMER("reproject_kfs");
 
   // Now project all point candidates

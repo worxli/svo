@@ -68,7 +68,6 @@ void BenchmarkNode::runFromFolder()
 {
   ofstream outfile;
   outfile.open ("/home/worxli/Datasets/data/associate_unscaled.txt");
-
   for(int img_id = 0;;++img_id)
   {
 

@@ -38,11 +38,14 @@ float getScale()
             stream >> line; 
 
             std::stringstream name;
-            name << "/home/worxli/Datasets/data/depth/depth" << line << ".png";
+            name << "/home/worxli/Datasets/data/depth/mapped" << line << ".png";
             Mat img = cv::imread(name.str(), 0);
+
+            cout << name.str() << endl;
 
             while(stream >> x != NULL) 
             {
+
                 stream >> y;
                 stream >> depth;
 
@@ -62,7 +65,7 @@ float getScale()
 
         // cout << sum1 << endl;
         // cout << sum2 << endl;
-        cout << "scale " << scale << endl;
+        cout << "scale " << scale << " to meters: " << scale/1000 <<  endl;
   }
 
   return scale;
@@ -117,10 +120,13 @@ void unscaleAssociate(float scale)
 
 int main(int argc, char** argv)
 {
-    float scale = getScale();
 
-    unscaleAssociate(scale/1000);
-    // unscaleAssociate(1);
+    if ( argc != 2 ) {
+        float scale = getScale();
+        unscaleAssociate(scale/1000);
+    } else {
+        unscaleAssociate(std::stof(argv[1]));
+    }
 
     return 0;
 }

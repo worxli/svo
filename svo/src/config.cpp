@@ -62,7 +62,7 @@ Config::Config() :
     grid_size(25),
     init_min_disparity(50.0),
     init_min_tracked(50),
-    init_min_inliers(40),
+    init_min_inliers(40), //40
     klt_max_level(4),
     klt_min_level(2),
     reproj_thresh(2.0),
