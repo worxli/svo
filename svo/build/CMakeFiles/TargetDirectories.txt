@@ -1,10 +1,6 @@
+/home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/convbund.dir
+/home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/depthtow.dir
 /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/pipeline.dir
+/home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/rewrite.dir
 /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/svo.dir
-/home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/test_depth_filter.dir
-/home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/test_feature_align.dir
-/home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/test_feature_detection.dir
-/home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/test_matcher.dir
-/home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/test_pipeline.dir
-/home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/test_pose_optimizer.dir
-/home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/test_sparse_img_align.dir
 /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles/unscale.dir

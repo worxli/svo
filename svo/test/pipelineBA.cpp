@@ -68,13 +68,14 @@ void BenchmarkNode::runFromFolder()
 {
   ofstream outfile;
   outfile.open ("/home/worxli/Datasets/data/associate_unscaled.txt");
-  for(int img_id = 0;;++img_id)
+  // outfile.open ("/home/worxli/data/test/associate_unscaled.txt");
+  for(int img_id = 20;img_id<654;++img_id)
   {
 
     // load image
     std::stringstream ss;
     ss << "/home/worxli/Datasets/data/img/color" << img_id << ".png";
-	
+	  // ss << "/home/worxli/data/test/img/color" << img_id << ".png";
     std::cout << "reading image " << ss.str() << std::endl;
     cv::Mat img(cv::imread(ss.str().c_str(), 0));
 

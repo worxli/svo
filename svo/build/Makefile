@@ -99,6 +99,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named convbund
+
+# Build rule for target.
+convbund: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 convbund
+.PHONY : convbund
+
+# fast build rule for target.
+convbund/fast:
+	$(MAKE) -f CMakeFiles/convbund.dir/build.make CMakeFiles/convbund.dir/build
+.PHONY : convbund/fast
+
+#=============================================================================
+# Target rules for targets named depthtow
+
+# Build rule for target.
+depthtow: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 depthtow
+.PHONY : depthtow
+
+# fast build rule for target.
+depthtow/fast:
+	$(MAKE) -f CMakeFiles/depthtow.dir/build.make CMakeFiles/depthtow.dir/build
+.PHONY : depthtow/fast
+
+#=============================================================================
 # Target rules for targets named pipeline
 
 # Build rule for target.
@@ -112,6 +138,19 @@ pipeline/fast:
 .PHONY : pipeline/fast
 
 #=============================================================================
+# Target rules for targets named rewrite
+
+# Build rule for target.
+rewrite: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rewrite
+.PHONY : rewrite
+
+# fast build rule for target.
+rewrite/fast:
+	$(MAKE) -f CMakeFiles/rewrite.dir/build.make CMakeFiles/rewrite.dir/build
+.PHONY : rewrite/fast
+
+#=============================================================================
 # Target rules for targets named svo
 
 # Build rule for target.
@@ -123,97 +162,6 @@ svo: cmake_check_build_system
 svo/fast:
 	$(MAKE) -f CMakeFiles/svo.dir/build.make CMakeFiles/svo.dir/build
 .PHONY : svo/fast
-
-#=============================================================================
-# Target rules for targets named test_depth_filter
-
-# Build rule for target.
-test_depth_filter: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_depth_filter
-.PHONY : test_depth_filter
-
-# fast build rule for target.
-test_depth_filter/fast:
-	$(MAKE) -f CMakeFiles/test_depth_filter.dir/build.make CMakeFiles/test_depth_filter.dir/build
-.PHONY : test_depth_filter/fast
-
-#=============================================================================
-# Target rules for targets named test_feature_align
-
-# Build rule for target.
-test_feature_align: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_feature_align
-.PHONY : test_feature_align
-
-# fast build rule for target.
-test_feature_align/fast:
-	$(MAKE) -f CMakeFiles/test_feature_align.dir/build.make CMakeFiles/test_feature_align.dir/build
-.PHONY : test_feature_align/fast
-
-#=============================================================================
-# Target rules for targets named test_feature_detection
-
-# Build rule for target.
-test_feature_detection: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_feature_detection
-.PHONY : test_feature_detection
-
-# fast build rule for target.
-test_feature_detection/fast:
-	$(MAKE) -f CMakeFiles/test_feature_detection.dir/build.make CMakeFiles/test_feature_detection.dir/build
-.PHONY : test_feature_detection/fast
-
-#=============================================================================
-# Target rules for targets named test_matcher
-
-# Build rule for target.
-test_matcher: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_matcher
-.PHONY : test_matcher
-
-# fast build rule for target.
-test_matcher/fast:
-	$(MAKE) -f CMakeFiles/test_matcher.dir/build.make CMakeFiles/test_matcher.dir/build
-.PHONY : test_matcher/fast
-
-#=============================================================================
-# Target rules for targets named test_pipeline
-
-# Build rule for target.
-test_pipeline: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_pipeline
-.PHONY : test_pipeline
-
-# fast build rule for target.
-test_pipeline/fast:
-	$(MAKE) -f CMakeFiles/test_pipeline.dir/build.make CMakeFiles/test_pipeline.dir/build
-.PHONY : test_pipeline/fast
-
-#=============================================================================
-# Target rules for targets named test_pose_optimizer
-
-# Build rule for target.
-test_pose_optimizer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_pose_optimizer
-.PHONY : test_pose_optimizer
-
-# fast build rule for target.
-test_pose_optimizer/fast:
-	$(MAKE) -f CMakeFiles/test_pose_optimizer.dir/build.make CMakeFiles/test_pose_optimizer.dir/build
-.PHONY : test_pose_optimizer/fast
-
-#=============================================================================
-# Target rules for targets named test_sparse_img_align
-
-# Build rule for target.
-test_sparse_img_align: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_sparse_img_align
-.PHONY : test_sparse_img_align
-
-# fast build rule for target.
-test_sparse_img_align/fast:
-	$(MAKE) -f CMakeFiles/test_sparse_img_align.dir/build.make CMakeFiles/test_sparse_img_align.dir/build
-.PHONY : test_sparse_img_align/fast
 
 #=============================================================================
 # Target rules for targets named unscale
@@ -564,6 +512,54 @@ src/sparse_img_align.cpp.s:
 	$(MAKE) -f CMakeFiles/svo.dir/build.make CMakeFiles/svo.dir/src/sparse_img_align.cpp.s
 .PHONY : src/sparse_img_align.cpp.s
 
+test/convBundle.o: test/convBundle.cpp.o
+.PHONY : test/convBundle.o
+
+# target to build an object file
+test/convBundle.cpp.o:
+	$(MAKE) -f CMakeFiles/convbund.dir/build.make CMakeFiles/convbund.dir/test/convBundle.cpp.o
+.PHONY : test/convBundle.cpp.o
+
+test/convBundle.i: test/convBundle.cpp.i
+.PHONY : test/convBundle.i
+
+# target to preprocess a source file
+test/convBundle.cpp.i:
+	$(MAKE) -f CMakeFiles/convbund.dir/build.make CMakeFiles/convbund.dir/test/convBundle.cpp.i
+.PHONY : test/convBundle.cpp.i
+
+test/convBundle.s: test/convBundle.cpp.s
+.PHONY : test/convBundle.s
+
+# target to generate assembly for a file
+test/convBundle.cpp.s:
+	$(MAKE) -f CMakeFiles/convbund.dir/build.make CMakeFiles/convbund.dir/test/convBundle.cpp.s
+.PHONY : test/convBundle.cpp.s
+
+test/getcloudfromdepth.o: test/getcloudfromdepth.cpp.o
+.PHONY : test/getcloudfromdepth.o
+
+# target to build an object file
+test/getcloudfromdepth.cpp.o:
+	$(MAKE) -f CMakeFiles/depthtow.dir/build.make CMakeFiles/depthtow.dir/test/getcloudfromdepth.cpp.o
+.PHONY : test/getcloudfromdepth.cpp.o
+
+test/getcloudfromdepth.i: test/getcloudfromdepth.cpp.i
+.PHONY : test/getcloudfromdepth.i
+
+# target to preprocess a source file
+test/getcloudfromdepth.cpp.i:
+	$(MAKE) -f CMakeFiles/depthtow.dir/build.make CMakeFiles/depthtow.dir/test/getcloudfromdepth.cpp.i
+.PHONY : test/getcloudfromdepth.cpp.i
+
+test/getcloudfromdepth.s: test/getcloudfromdepth.cpp.s
+.PHONY : test/getcloudfromdepth.s
+
+# target to generate assembly for a file
+test/getcloudfromdepth.cpp.s:
+	$(MAKE) -f CMakeFiles/depthtow.dir/build.make CMakeFiles/depthtow.dir/test/getcloudfromdepth.cpp.s
+.PHONY : test/getcloudfromdepth.cpp.s
+
 test/pipelineBA.o: test/pipelineBA.cpp.o
 .PHONY : test/pipelineBA.o
 
@@ -588,173 +584,29 @@ test/pipelineBA.cpp.s:
 	$(MAKE) -f CMakeFiles/pipeline.dir/build.make CMakeFiles/pipeline.dir/test/pipelineBA.cpp.s
 .PHONY : test/pipelineBA.cpp.s
 
-test/test_depth_filter.o: test/test_depth_filter.cpp.o
-.PHONY : test/test_depth_filter.o
+test/rewritefiles.o: test/rewritefiles.cpp.o
+.PHONY : test/rewritefiles.o
 
 # target to build an object file
-test/test_depth_filter.cpp.o:
-	$(MAKE) -f CMakeFiles/test_depth_filter.dir/build.make CMakeFiles/test_depth_filter.dir/test/test_depth_filter.cpp.o
-.PHONY : test/test_depth_filter.cpp.o
+test/rewritefiles.cpp.o:
+	$(MAKE) -f CMakeFiles/rewrite.dir/build.make CMakeFiles/rewrite.dir/test/rewritefiles.cpp.o
+.PHONY : test/rewritefiles.cpp.o
 
-test/test_depth_filter.i: test/test_depth_filter.cpp.i
-.PHONY : test/test_depth_filter.i
-
-# target to preprocess a source file
-test/test_depth_filter.cpp.i:
-	$(MAKE) -f CMakeFiles/test_depth_filter.dir/build.make CMakeFiles/test_depth_filter.dir/test/test_depth_filter.cpp.i
-.PHONY : test/test_depth_filter.cpp.i
-
-test/test_depth_filter.s: test/test_depth_filter.cpp.s
-.PHONY : test/test_depth_filter.s
-
-# target to generate assembly for a file
-test/test_depth_filter.cpp.s:
-	$(MAKE) -f CMakeFiles/test_depth_filter.dir/build.make CMakeFiles/test_depth_filter.dir/test/test_depth_filter.cpp.s
-.PHONY : test/test_depth_filter.cpp.s
-
-test/test_feature_alignment.o: test/test_feature_alignment.cpp.o
-.PHONY : test/test_feature_alignment.o
-
-# target to build an object file
-test/test_feature_alignment.cpp.o:
-	$(MAKE) -f CMakeFiles/test_feature_align.dir/build.make CMakeFiles/test_feature_align.dir/test/test_feature_alignment.cpp.o
-.PHONY : test/test_feature_alignment.cpp.o
-
-test/test_feature_alignment.i: test/test_feature_alignment.cpp.i
-.PHONY : test/test_feature_alignment.i
+test/rewritefiles.i: test/rewritefiles.cpp.i
+.PHONY : test/rewritefiles.i
 
 # target to preprocess a source file
-test/test_feature_alignment.cpp.i:
-	$(MAKE) -f CMakeFiles/test_feature_align.dir/build.make CMakeFiles/test_feature_align.dir/test/test_feature_alignment.cpp.i
-.PHONY : test/test_feature_alignment.cpp.i
+test/rewritefiles.cpp.i:
+	$(MAKE) -f CMakeFiles/rewrite.dir/build.make CMakeFiles/rewrite.dir/test/rewritefiles.cpp.i
+.PHONY : test/rewritefiles.cpp.i
 
-test/test_feature_alignment.s: test/test_feature_alignment.cpp.s
-.PHONY : test/test_feature_alignment.s
-
-# target to generate assembly for a file
-test/test_feature_alignment.cpp.s:
-	$(MAKE) -f CMakeFiles/test_feature_align.dir/build.make CMakeFiles/test_feature_align.dir/test/test_feature_alignment.cpp.s
-.PHONY : test/test_feature_alignment.cpp.s
-
-test/test_feature_detection.o: test/test_feature_detection.cpp.o
-.PHONY : test/test_feature_detection.o
-
-# target to build an object file
-test/test_feature_detection.cpp.o:
-	$(MAKE) -f CMakeFiles/test_feature_detection.dir/build.make CMakeFiles/test_feature_detection.dir/test/test_feature_detection.cpp.o
-.PHONY : test/test_feature_detection.cpp.o
-
-test/test_feature_detection.i: test/test_feature_detection.cpp.i
-.PHONY : test/test_feature_detection.i
-
-# target to preprocess a source file
-test/test_feature_detection.cpp.i:
-	$(MAKE) -f CMakeFiles/test_feature_detection.dir/build.make CMakeFiles/test_feature_detection.dir/test/test_feature_detection.cpp.i
-.PHONY : test/test_feature_detection.cpp.i
-
-test/test_feature_detection.s: test/test_feature_detection.cpp.s
-.PHONY : test/test_feature_detection.s
+test/rewritefiles.s: test/rewritefiles.cpp.s
+.PHONY : test/rewritefiles.s
 
 # target to generate assembly for a file
-test/test_feature_detection.cpp.s:
-	$(MAKE) -f CMakeFiles/test_feature_detection.dir/build.make CMakeFiles/test_feature_detection.dir/test/test_feature_detection.cpp.s
-.PHONY : test/test_feature_detection.cpp.s
-
-test/test_matcher.o: test/test_matcher.cpp.o
-.PHONY : test/test_matcher.o
-
-# target to build an object file
-test/test_matcher.cpp.o:
-	$(MAKE) -f CMakeFiles/test_matcher.dir/build.make CMakeFiles/test_matcher.dir/test/test_matcher.cpp.o
-.PHONY : test/test_matcher.cpp.o
-
-test/test_matcher.i: test/test_matcher.cpp.i
-.PHONY : test/test_matcher.i
-
-# target to preprocess a source file
-test/test_matcher.cpp.i:
-	$(MAKE) -f CMakeFiles/test_matcher.dir/build.make CMakeFiles/test_matcher.dir/test/test_matcher.cpp.i
-.PHONY : test/test_matcher.cpp.i
-
-test/test_matcher.s: test/test_matcher.cpp.s
-.PHONY : test/test_matcher.s
-
-# target to generate assembly for a file
-test/test_matcher.cpp.s:
-	$(MAKE) -f CMakeFiles/test_matcher.dir/build.make CMakeFiles/test_matcher.dir/test/test_matcher.cpp.s
-.PHONY : test/test_matcher.cpp.s
-
-test/test_pipeline.o: test/test_pipeline.cpp.o
-.PHONY : test/test_pipeline.o
-
-# target to build an object file
-test/test_pipeline.cpp.o:
-	$(MAKE) -f CMakeFiles/test_pipeline.dir/build.make CMakeFiles/test_pipeline.dir/test/test_pipeline.cpp.o
-.PHONY : test/test_pipeline.cpp.o
-
-test/test_pipeline.i: test/test_pipeline.cpp.i
-.PHONY : test/test_pipeline.i
-
-# target to preprocess a source file
-test/test_pipeline.cpp.i:
-	$(MAKE) -f CMakeFiles/test_pipeline.dir/build.make CMakeFiles/test_pipeline.dir/test/test_pipeline.cpp.i
-.PHONY : test/test_pipeline.cpp.i
-
-test/test_pipeline.s: test/test_pipeline.cpp.s
-.PHONY : test/test_pipeline.s
-
-# target to generate assembly for a file
-test/test_pipeline.cpp.s:
-	$(MAKE) -f CMakeFiles/test_pipeline.dir/build.make CMakeFiles/test_pipeline.dir/test/test_pipeline.cpp.s
-.PHONY : test/test_pipeline.cpp.s
-
-test/test_pose_optimizer.o: test/test_pose_optimizer.cpp.o
-.PHONY : test/test_pose_optimizer.o
-
-# target to build an object file
-test/test_pose_optimizer.cpp.o:
-	$(MAKE) -f CMakeFiles/test_pose_optimizer.dir/build.make CMakeFiles/test_pose_optimizer.dir/test/test_pose_optimizer.cpp.o
-.PHONY : test/test_pose_optimizer.cpp.o
-
-test/test_pose_optimizer.i: test/test_pose_optimizer.cpp.i
-.PHONY : test/test_pose_optimizer.i
-
-# target to preprocess a source file
-test/test_pose_optimizer.cpp.i:
-	$(MAKE) -f CMakeFiles/test_pose_optimizer.dir/build.make CMakeFiles/test_pose_optimizer.dir/test/test_pose_optimizer.cpp.i
-.PHONY : test/test_pose_optimizer.cpp.i
-
-test/test_pose_optimizer.s: test/test_pose_optimizer.cpp.s
-.PHONY : test/test_pose_optimizer.s
-
-# target to generate assembly for a file
-test/test_pose_optimizer.cpp.s:
-	$(MAKE) -f CMakeFiles/test_pose_optimizer.dir/build.make CMakeFiles/test_pose_optimizer.dir/test/test_pose_optimizer.cpp.s
-.PHONY : test/test_pose_optimizer.cpp.s
-
-test/test_sparse_img_align.o: test/test_sparse_img_align.cpp.o
-.PHONY : test/test_sparse_img_align.o
-
-# target to build an object file
-test/test_sparse_img_align.cpp.o:
-	$(MAKE) -f CMakeFiles/test_sparse_img_align.dir/build.make CMakeFiles/test_sparse_img_align.dir/test/test_sparse_img_align.cpp.o
-.PHONY : test/test_sparse_img_align.cpp.o
-
-test/test_sparse_img_align.i: test/test_sparse_img_align.cpp.i
-.PHONY : test/test_sparse_img_align.i
-
-# target to preprocess a source file
-test/test_sparse_img_align.cpp.i:
-	$(MAKE) -f CMakeFiles/test_sparse_img_align.dir/build.make CMakeFiles/test_sparse_img_align.dir/test/test_sparse_img_align.cpp.i
-.PHONY : test/test_sparse_img_align.cpp.i
-
-test/test_sparse_img_align.s: test/test_sparse_img_align.cpp.s
-.PHONY : test/test_sparse_img_align.s
-
-# target to generate assembly for a file
-test/test_sparse_img_align.cpp.s:
-	$(MAKE) -f CMakeFiles/test_sparse_img_align.dir/build.make CMakeFiles/test_sparse_img_align.dir/test/test_sparse_img_align.cpp.s
-.PHONY : test/test_sparse_img_align.cpp.s
+test/rewritefiles.cpp.s:
+	$(MAKE) -f CMakeFiles/rewrite.dir/build.make CMakeFiles/rewrite.dir/test/rewritefiles.cpp.s
+.PHONY : test/rewritefiles.cpp.s
 
 test/unscale.o: test/unscale.cpp.o
 .PHONY : test/unscale.o
@@ -786,17 +638,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... convbund"
+	@echo "... depthtow"
 	@echo "... edit_cache"
 	@echo "... pipeline"
 	@echo "... rebuild_cache"
+	@echo "... rewrite"
 	@echo "... svo"
-	@echo "... test_depth_filter"
-	@echo "... test_feature_align"
-	@echo "... test_feature_detection"
-	@echo "... test_matcher"
-	@echo "... test_pipeline"
-	@echo "... test_pose_optimizer"
-	@echo "... test_sparse_img_align"
 	@echo "... unscale"
 	@echo "... src/config.o"
 	@echo "... src/config.i"
@@ -840,30 +688,18 @@ help:
 	@echo "... src/sparse_img_align.o"
 	@echo "... src/sparse_img_align.i"
 	@echo "... src/sparse_img_align.s"
+	@echo "... test/convBundle.o"
+	@echo "... test/convBundle.i"
+	@echo "... test/convBundle.s"
+	@echo "... test/getcloudfromdepth.o"
+	@echo "... test/getcloudfromdepth.i"
+	@echo "... test/getcloudfromdepth.s"
 	@echo "... test/pipelineBA.o"
 	@echo "... test/pipelineBA.i"
 	@echo "... test/pipelineBA.s"
-	@echo "... test/test_depth_filter.o"
-	@echo "... test/test_depth_filter.i"
-	@echo "... test/test_depth_filter.s"
-	@echo "... test/test_feature_alignment.o"
-	@echo "... test/test_feature_alignment.i"
-	@echo "... test/test_feature_alignment.s"
-	@echo "... test/test_feature_detection.o"
-	@echo "... test/test_feature_detection.i"
-	@echo "... test/test_feature_detection.s"
-	@echo "... test/test_matcher.o"
-	@echo "... test/test_matcher.i"
-	@echo "... test/test_matcher.s"
-	@echo "... test/test_pipeline.o"
-	@echo "... test/test_pipeline.i"
-	@echo "... test/test_pipeline.s"
-	@echo "... test/test_pose_optimizer.o"
-	@echo "... test/test_pose_optimizer.i"
-	@echo "... test/test_pose_optimizer.s"
-	@echo "... test/test_sparse_img_align.o"
-	@echo "... test/test_sparse_img_align.i"
-	@echo "... test/test_sparse_img_align.s"
+	@echo "... test/rewritefiles.o"
+	@echo "... test/rewritefiles.i"
+	@echo "... test/rewritefiles.s"
 	@echo "... test/unscale.o"
 	@echo "... test/unscale.i"
 	@echo "... test/unscale.s"

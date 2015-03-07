@@ -100,9 +100,9 @@ bin/test_feature_align: /usr/local/lib/libopencv_gpu.so.2.4.9
 bin/test_feature_align: /usr/local/lib/libopencv_photo.so.2.4.9
 bin/test_feature_align: /usr/local/lib/libopencv_objdetect.so.2.4.9
 bin/test_feature_align: /usr/local/lib/libopencv_legacy.so.2.4.9
+bin/test_feature_align: /usr/local/lib/libopencv_calib3d.so.2.4.9
 bin/test_feature_align: /usr/local/lib/libopencv_video.so.2.4.9
 bin/test_feature_align: /usr/local/lib/libopencv_ml.so.2.4.9
-bin/test_feature_align: /usr/local/lib/libopencv_calib3d.so.2.4.9
 bin/test_feature_align: /usr/local/lib/libopencv_features2d.so.2.4.9
 bin/test_feature_align: /usr/local/lib/libopencv_highgui.so.2.4.9
 bin/test_feature_align: /usr/local/lib/libopencv_imgproc.so.2.4.9

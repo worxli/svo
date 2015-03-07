@@ -96,7 +96,7 @@ private:
   bool reprojectPoint(FramePtr frame, Point* point, int print);
 
   //lukas BA
-  ofstream outfile;
+  ofstream outfile, outfile2, outfile3;
 };
 
 } // namespace svo

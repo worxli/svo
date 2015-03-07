@@ -96,12 +96,6 @@ Eigen/StdVector
 Eigen/Geometry
 -
 
-/home/worxli/rpg/rpg_svo/svo/src/config.cpp
-vikit/params_helper.h
--
-svo/config.h
--
-
 /home/worxli/rpg/rpg_svo/svo/src/reprojector.cpp
 algorithm
 -

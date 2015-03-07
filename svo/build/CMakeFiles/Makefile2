@@ -53,13 +53,83 @@ CMAKE_SOURCE_DIR = /home/worxli/rpg/rpg_svo/svo
 CMAKE_BINARY_DIR = /home/worxli/rpg/rpg_svo/svo/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/convbund.dir
+
+# All Build rule for target.
+CMakeFiles/convbund.dir/all:
+	$(MAKE) -f CMakeFiles/convbund.dir/build.make CMakeFiles/convbund.dir/depend
+	$(MAKE) -f CMakeFiles/convbund.dir/build.make CMakeFiles/convbund.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  1
+	@echo "Built target convbund"
+.PHONY : CMakeFiles/convbund.dir/all
+
+# Include target in all.
+all: CMakeFiles/convbund.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/convbund.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/convbund.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 0
+.PHONY : CMakeFiles/convbund.dir/rule
+
+# Convenience name for target.
+convbund: CMakeFiles/convbund.dir/rule
+.PHONY : convbund
+
+# clean rule for target.
+CMakeFiles/convbund.dir/clean:
+	$(MAKE) -f CMakeFiles/convbund.dir/build.make CMakeFiles/convbund.dir/clean
+.PHONY : CMakeFiles/convbund.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/convbund.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/depthtow.dir
+
+# All Build rule for target.
+CMakeFiles/depthtow.dir/all:
+	$(MAKE) -f CMakeFiles/depthtow.dir/build.make CMakeFiles/depthtow.dir/depend
+	$(MAKE) -f CMakeFiles/depthtow.dir/build.make CMakeFiles/depthtow.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  2
+	@echo "Built target depthtow"
+.PHONY : CMakeFiles/depthtow.dir/all
+
+# Include target in all.
+all: CMakeFiles/depthtow.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/depthtow.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/depthtow.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 0
+.PHONY : CMakeFiles/depthtow.dir/rule
+
+# Convenience name for target.
+depthtow: CMakeFiles/depthtow.dir/rule
+.PHONY : depthtow
+
+# clean rule for target.
+CMakeFiles/depthtow.dir/clean:
+	$(MAKE) -f CMakeFiles/depthtow.dir/build.make CMakeFiles/depthtow.dir/clean
+.PHONY : CMakeFiles/depthtow.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/depthtow.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/pipeline.dir
 
 # All Build rule for target.
 CMakeFiles/pipeline.dir/all: CMakeFiles/svo.dir/all
 	$(MAKE) -f CMakeFiles/pipeline.dir/build.make CMakeFiles/pipeline.dir/depend
 	$(MAKE) -f CMakeFiles/pipeline.dir/build.make CMakeFiles/pipeline.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  3
 	@echo "Built target pipeline"
 .PHONY : CMakeFiles/pipeline.dir/all
 
@@ -88,13 +158,48 @@ clean: CMakeFiles/pipeline.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/rewrite.dir
+
+# All Build rule for target.
+CMakeFiles/rewrite.dir/all: CMakeFiles/svo.dir/all
+	$(MAKE) -f CMakeFiles/rewrite.dir/build.make CMakeFiles/rewrite.dir/depend
+	$(MAKE) -f CMakeFiles/rewrite.dir/build.make CMakeFiles/rewrite.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  4
+	@echo "Built target rewrite"
+.PHONY : CMakeFiles/rewrite.dir/all
+
+# Include target in all.
+all: CMakeFiles/rewrite.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/rewrite.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 15
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/rewrite.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 0
+.PHONY : CMakeFiles/rewrite.dir/rule
+
+# Convenience name for target.
+rewrite: CMakeFiles/rewrite.dir/rule
+.PHONY : rewrite
+
+# clean rule for target.
+CMakeFiles/rewrite.dir/clean:
+	$(MAKE) -f CMakeFiles/rewrite.dir/build.make CMakeFiles/rewrite.dir/clean
+.PHONY : CMakeFiles/rewrite.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/rewrite.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/svo.dir
 
 # All Build rule for target.
 CMakeFiles/svo.dir/all:
 	$(MAKE) -f CMakeFiles/svo.dir/build.make CMakeFiles/svo.dir/depend
 	$(MAKE) -f CMakeFiles/svo.dir/build.make CMakeFiles/svo.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  2 3 4 5 6 7 8 9 10 11 12 13 14 15
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  5 6 7 8 9 10 11 12 13 14 15 16 17 18
 	@echo "Built target svo"
 .PHONY : CMakeFiles/svo.dir/all
 
@@ -123,258 +228,13 @@ clean: CMakeFiles/svo.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/test_depth_filter.dir
-
-# All Build rule for target.
-CMakeFiles/test_depth_filter.dir/all: CMakeFiles/svo.dir/all
-	$(MAKE) -f CMakeFiles/test_depth_filter.dir/build.make CMakeFiles/test_depth_filter.dir/depend
-	$(MAKE) -f CMakeFiles/test_depth_filter.dir/build.make CMakeFiles/test_depth_filter.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  16
-	@echo "Built target test_depth_filter"
-.PHONY : CMakeFiles/test_depth_filter.dir/all
-
-# Include target in all.
-all: CMakeFiles/test_depth_filter.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/test_depth_filter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 15
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_depth_filter.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 0
-.PHONY : CMakeFiles/test_depth_filter.dir/rule
-
-# Convenience name for target.
-test_depth_filter: CMakeFiles/test_depth_filter.dir/rule
-.PHONY : test_depth_filter
-
-# clean rule for target.
-CMakeFiles/test_depth_filter.dir/clean:
-	$(MAKE) -f CMakeFiles/test_depth_filter.dir/build.make CMakeFiles/test_depth_filter.dir/clean
-.PHONY : CMakeFiles/test_depth_filter.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/test_depth_filter.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/test_feature_align.dir
-
-# All Build rule for target.
-CMakeFiles/test_feature_align.dir/all: CMakeFiles/svo.dir/all
-	$(MAKE) -f CMakeFiles/test_feature_align.dir/build.make CMakeFiles/test_feature_align.dir/depend
-	$(MAKE) -f CMakeFiles/test_feature_align.dir/build.make CMakeFiles/test_feature_align.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  17
-	@echo "Built target test_feature_align"
-.PHONY : CMakeFiles/test_feature_align.dir/all
-
-# Include target in all.
-all: CMakeFiles/test_feature_align.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/test_feature_align.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 15
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_feature_align.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 0
-.PHONY : CMakeFiles/test_feature_align.dir/rule
-
-# Convenience name for target.
-test_feature_align: CMakeFiles/test_feature_align.dir/rule
-.PHONY : test_feature_align
-
-# clean rule for target.
-CMakeFiles/test_feature_align.dir/clean:
-	$(MAKE) -f CMakeFiles/test_feature_align.dir/build.make CMakeFiles/test_feature_align.dir/clean
-.PHONY : CMakeFiles/test_feature_align.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/test_feature_align.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/test_feature_detection.dir
-
-# All Build rule for target.
-CMakeFiles/test_feature_detection.dir/all: CMakeFiles/svo.dir/all
-	$(MAKE) -f CMakeFiles/test_feature_detection.dir/build.make CMakeFiles/test_feature_detection.dir/depend
-	$(MAKE) -f CMakeFiles/test_feature_detection.dir/build.make CMakeFiles/test_feature_detection.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  18
-	@echo "Built target test_feature_detection"
-.PHONY : CMakeFiles/test_feature_detection.dir/all
-
-# Include target in all.
-all: CMakeFiles/test_feature_detection.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/test_feature_detection.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 15
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_feature_detection.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 0
-.PHONY : CMakeFiles/test_feature_detection.dir/rule
-
-# Convenience name for target.
-test_feature_detection: CMakeFiles/test_feature_detection.dir/rule
-.PHONY : test_feature_detection
-
-# clean rule for target.
-CMakeFiles/test_feature_detection.dir/clean:
-	$(MAKE) -f CMakeFiles/test_feature_detection.dir/build.make CMakeFiles/test_feature_detection.dir/clean
-.PHONY : CMakeFiles/test_feature_detection.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/test_feature_detection.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/test_matcher.dir
-
-# All Build rule for target.
-CMakeFiles/test_matcher.dir/all: CMakeFiles/svo.dir/all
-	$(MAKE) -f CMakeFiles/test_matcher.dir/build.make CMakeFiles/test_matcher.dir/depend
-	$(MAKE) -f CMakeFiles/test_matcher.dir/build.make CMakeFiles/test_matcher.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  19
-	@echo "Built target test_matcher"
-.PHONY : CMakeFiles/test_matcher.dir/all
-
-# Include target in all.
-all: CMakeFiles/test_matcher.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/test_matcher.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 15
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_matcher.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 0
-.PHONY : CMakeFiles/test_matcher.dir/rule
-
-# Convenience name for target.
-test_matcher: CMakeFiles/test_matcher.dir/rule
-.PHONY : test_matcher
-
-# clean rule for target.
-CMakeFiles/test_matcher.dir/clean:
-	$(MAKE) -f CMakeFiles/test_matcher.dir/build.make CMakeFiles/test_matcher.dir/clean
-.PHONY : CMakeFiles/test_matcher.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/test_matcher.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/test_pipeline.dir
-
-# All Build rule for target.
-CMakeFiles/test_pipeline.dir/all: CMakeFiles/svo.dir/all
-	$(MAKE) -f CMakeFiles/test_pipeline.dir/build.make CMakeFiles/test_pipeline.dir/depend
-	$(MAKE) -f CMakeFiles/test_pipeline.dir/build.make CMakeFiles/test_pipeline.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  20
-	@echo "Built target test_pipeline"
-.PHONY : CMakeFiles/test_pipeline.dir/all
-
-# Include target in all.
-all: CMakeFiles/test_pipeline.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/test_pipeline.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 15
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_pipeline.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 0
-.PHONY : CMakeFiles/test_pipeline.dir/rule
-
-# Convenience name for target.
-test_pipeline: CMakeFiles/test_pipeline.dir/rule
-.PHONY : test_pipeline
-
-# clean rule for target.
-CMakeFiles/test_pipeline.dir/clean:
-	$(MAKE) -f CMakeFiles/test_pipeline.dir/build.make CMakeFiles/test_pipeline.dir/clean
-.PHONY : CMakeFiles/test_pipeline.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/test_pipeline.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/test_pose_optimizer.dir
-
-# All Build rule for target.
-CMakeFiles/test_pose_optimizer.dir/all: CMakeFiles/svo.dir/all
-	$(MAKE) -f CMakeFiles/test_pose_optimizer.dir/build.make CMakeFiles/test_pose_optimizer.dir/depend
-	$(MAKE) -f CMakeFiles/test_pose_optimizer.dir/build.make CMakeFiles/test_pose_optimizer.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  21
-	@echo "Built target test_pose_optimizer"
-.PHONY : CMakeFiles/test_pose_optimizer.dir/all
-
-# Include target in all.
-all: CMakeFiles/test_pose_optimizer.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/test_pose_optimizer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 15
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_pose_optimizer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 0
-.PHONY : CMakeFiles/test_pose_optimizer.dir/rule
-
-# Convenience name for target.
-test_pose_optimizer: CMakeFiles/test_pose_optimizer.dir/rule
-.PHONY : test_pose_optimizer
-
-# clean rule for target.
-CMakeFiles/test_pose_optimizer.dir/clean:
-	$(MAKE) -f CMakeFiles/test_pose_optimizer.dir/build.make CMakeFiles/test_pose_optimizer.dir/clean
-.PHONY : CMakeFiles/test_pose_optimizer.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/test_pose_optimizer.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/test_sparse_img_align.dir
-
-# All Build rule for target.
-CMakeFiles/test_sparse_img_align.dir/all: CMakeFiles/svo.dir/all
-	$(MAKE) -f CMakeFiles/test_sparse_img_align.dir/build.make CMakeFiles/test_sparse_img_align.dir/depend
-	$(MAKE) -f CMakeFiles/test_sparse_img_align.dir/build.make CMakeFiles/test_sparse_img_align.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  22
-	@echo "Built target test_sparse_img_align"
-.PHONY : CMakeFiles/test_sparse_img_align.dir/all
-
-# Include target in all.
-all: CMakeFiles/test_sparse_img_align.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/test_sparse_img_align.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 15
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_sparse_img_align.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles 0
-.PHONY : CMakeFiles/test_sparse_img_align.dir/rule
-
-# Convenience name for target.
-test_sparse_img_align: CMakeFiles/test_sparse_img_align.dir/rule
-.PHONY : test_sparse_img_align
-
-# clean rule for target.
-CMakeFiles/test_sparse_img_align.dir/clean:
-	$(MAKE) -f CMakeFiles/test_sparse_img_align.dir/build.make CMakeFiles/test_sparse_img_align.dir/clean
-.PHONY : CMakeFiles/test_sparse_img_align.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/test_sparse_img_align.dir/clean
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/unscale.dir
 
 # All Build rule for target.
 CMakeFiles/unscale.dir/all:
 	$(MAKE) -f CMakeFiles/unscale.dir/build.make CMakeFiles/unscale.dir/depend
 	$(MAKE) -f CMakeFiles/unscale.dir/build.make CMakeFiles/unscale.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  23
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/worxli/rpg/rpg_svo/svo/build/CMakeFiles  19
 	@echo "Built target unscale"
 .PHONY : CMakeFiles/unscale.dir/all
 

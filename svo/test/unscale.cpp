@@ -3,6 +3,7 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <fstream>
+#include <Eigen/Geometry>
 
 using namespace std;
 using namespace cv;
@@ -19,6 +20,20 @@ float getScale()
 
     std::fstream associationfile;
     associationfile.open("/home/worxli/Datasets/data/depthunscaled.txt",std::ios::in);
+    // associationfile.open("/home/worxli/data/test/depthunscaled.txt",std::ios::in);
+
+    // ofstream outfile2;
+    // // outfile2.open ("/home/worxli/Datasets/data/depth.ply");
+    // outfile2.open ("/home/worxli/data/test/depth.ply");
+    // outfile2 << "ply\n"
+    //       << "format ascii 1.0\n"
+    //       << "element face 0\n"
+    //       << "property list uchar int vertex_indices\n"
+    //       << "element vertex 1000\n"
+    //       << "property float x\n"
+    //       << "property float y\n"
+    //       << "property float z\n"
+    //       << "end_header\n";
 
     if(!associationfile.is_open())
     {
@@ -39,6 +54,7 @@ float getScale()
 
             std::stringstream name;
             name << "/home/worxli/Datasets/data/depth/mapped" << line << ".png";
+            // name << "/home/worxli/data/test/depth/mapped" << line << ".png";
             Mat img = cv::imread(name.str(), 0);
 
             cout << name.str() << endl;
@@ -52,9 +68,14 @@ float getScale()
                 uint16_t realDepth = img.at<uint16_t>(y, x);
 
                 if(realDepth>0) {
-                    sum1 = sum1 + (double) ((float) realDepth * depth);
-                    sum2 = sum2 + (double) depth * depth;
+                    // sum1 = sum1 + (double) ((float) realDepth/5000 * depth);
+                    // sum2 = sum2 + (double) depth * depth;
+                    sum1 = sum1 + 5000.0f * depth/realDepth;
+                    sum2 = sum2 + 1; 
                 }
+
+                // outfile2 << x << " " << y << " " << realDepth << "\n" << endl;
+                // outfile2 << x << " " << y << " " << depth << "\n" << endl;
 
                 // cout << "line: " << line << " x " << x << " y " << y << " depth " << depth << " realDepth " << realDepth << endl;
             }
@@ -63,9 +84,11 @@ float getScale()
 
         scale = sum1/sum2;
 
+        // outfile2.close();
+
         // cout << sum1 << endl;
         // cout << sum2 << endl;
-        cout << "scale " << scale << " to meters: " << scale/1000 <<  endl;
+        cout << "scale " << scale << " to meters: " << scale <<  endl;
   }
 
   return scale;
@@ -75,9 +98,24 @@ void unscaleAssociate(float scale)
 {
     std::fstream associationfile;
     associationfile.open("/home/worxli/Datasets/data/associate_unscaled.txt",std::ios::in);
+    // associationfile.open("/home/worxli/data/test/associate_unscaled.txt",std::ios::in);
 
-    ofstream outfile;
+    ofstream outfile, outfile2;
     outfile.open ("/home/worxli/Datasets/data/associate.txt");
+    outfile2.open ("/home/worxli/Datasets/data/svo_cameras.ply");
+
+    // outfile.open ("/home/worxli/data/test/associate.txt");
+    // outfile2.open ("/home/worxli/data/test/svo_cameras.ply");
+
+    outfile2 << "ply\n"
+          << "format ascii 1.0\n"
+          << "element face 0\n"
+          << "property list uchar int vertex_indices\n"
+          << "element vertex 88\n"
+          << "property float x\n"
+          << "property float y\n"
+          << "property float z\n"
+          << "end_header\n";
 
     if(!associationfile.is_open())
     {
@@ -103,17 +141,27 @@ void unscaleAssociate(float scale)
             outfile << translation1 * scale << " "
                 << translation2 * scale << " "
                 << translation3 * scale << " "
-                << q1  << " "  
-                << q2  << " " 
-                << q3  << " " 
-                << q4  << " " 
+                << q1 << " "  
+                << q2 << " " 
+                << q3 << " " 
+                << q4 << " " 
                 << depthname << " "
                 << rgbname << "\n";
+
+            Eigen::Matrix3d r = Eigen::Quaterniond(q4,q1,q2,q3).toRotationMatrix();
+            Eigen::Vector3d t = Eigen::Vector3d(translation1 * scale, translation2 * scale, translation3 * scale);
+
+            Eigen::Vector3d vec = ((-1) * r.transpose()) * t;
+
+            // cout << vec[0] << " " << vec[1] << " " << vec[1] << endl;
+
+            outfile2 << vec[0]  << " " << vec[1] << " " << vec[2] << endl;
 
 
         }
 
         outfile.close();
+        outfile2.close();
         cout << "wrote associate file" << endl;
   }
 }
@@ -123,7 +171,7 @@ int main(int argc, char** argv)
 
     if ( argc != 2 ) {
         float scale = getScale();
-        unscaleAssociate(scale/1000);
+        unscaleAssociate(scale);
     } else {
         unscaleAssociate(std::stof(argv[1]));
     }

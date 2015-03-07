@@ -35,6 +35,19 @@ Reprojector::Reprojector(vk::AbstractCamera* cam, Map& map) :
 {
   initializeGrid(cam);
   outfile.open ("/home/worxli/Datasets/data/depthunscaled.txt");
+  outfile2.open ("/home/worxli/Datasets/data/xyzcoords.ply");
+  // outfile.open ("/home/worxli/data/test/depthunscaled.txt");
+  // outfile2.open ("/home/worxli/data/test/xyzcoords.ply");
+  outfile2 << "ply\n"
+          << "format ascii 1.0\n"
+          << "element face 0\n"
+          << "property list uchar int vertex_indices\n"
+          << "element vertex 3527\n"
+          << "property float x\n"
+          << "property float y\n"
+          << "property float z\n"
+          << "end_header\n";
+  // outfile3.open("/home/worxli/Datasets/data/xyzcoords.ply")
 }
 
 Reprojector::~Reprojector()
@@ -101,6 +114,7 @@ void Reprojector::reprojectMap(
       if((*it_ftr)->point->last_projected_kf_id_ == frame->id_)
         continue;
       (*it_ftr)->point->last_projected_kf_id_ = frame->id_;
+      // outfile2 << (*it_ftr)->point->pos_[0] << " " << (*it_ftr)->point->pos_[1] << " " << (*it_ftr)->point->pos_[2] << "\n";
       if(reprojectPoint(frame, (*it_ftr)->point, 0))
         overlap_kfs.back().second++;
     }
@@ -118,6 +132,7 @@ void Reprojector::reprojectMap(
     auto it=map_.point_candidates_.candidates_.begin();
     while(it!=map_.point_candidates_.candidates_.end())
     {
+      // outfile2 << it->first->pos_[0] << " " << it->first->pos_[1] << " " << it->first->pos_[2] << "\n";
       if(!reprojectPoint(frame, it->first, 1))
       {
         it->first->n_failed_reproj_ += 3;
@@ -220,12 +235,14 @@ bool Reprojector::reprojectPoint(FramePtr frame, Point* point, int print)
   {
 
     // cout << "point pos" << point->pos_ << endl;
-    // cout << "px" << px << endl;
+    cout << "px" << px << endl;
     if(print)
       // cout << "repro" << endl;
 
-    if(print)
+    if(print) {
       outfile << round(px[0]) << " " << round(px[1]) << " " << point->pos_[2] << " ";
+      outfile2 << point->pos_[0] << " " << point->pos_[1] << " " << point->pos_[2] << "\n";
+    }
 
     const int k = static_cast<int>(px[1]/grid_.cell_size)*grid_.grid_n_cols
                 + static_cast<int>(px[0]/grid_.cell_size);

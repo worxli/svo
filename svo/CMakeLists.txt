@@ -129,29 +129,38 @@ TARGET_LINK_LIBRARIES(svo ${LINK_LIBS})
 ################################################################################
 # TESTS
 
-ADD_EXECUTABLE(test_feature_align test/test_feature_alignment.cpp)
-TARGET_LINK_LIBRARIES(test_feature_align svo)
+#ADD_EXECUTABLE(test_feature_align test/test_feature_alignment.cpp)
+#TARGET_LINK_LIBRARIES(test_feature_align svo)
 
-ADD_EXECUTABLE(test_pipeline test/test_pipeline.cpp)
-TARGET_LINK_LIBRARIES(test_pipeline svo)
+#ADD_EXECUTABLE(test_pipeline test/test_pipeline.cpp)
+#TARGET_LINK_LIBRARIES(test_pipeline svo)
 
 ADD_EXECUTABLE(pipeline test/pipelineBA.cpp)
 TARGET_LINK_LIBRARIES(pipeline svo)
 
+ADD_EXECUTABLE(rewrite test/rewritefiles.cpp)
+TARGET_LINK_LIBRARIES(rewrite svo)
+
 ADD_EXECUTABLE(unscale test/unscale.cpp)
 TARGET_LINK_LIBRARIES(unscale ${OpenCV_LIBS})
 
-ADD_EXECUTABLE(test_matcher test/test_matcher.cpp)
-TARGET_LINK_LIBRARIES(test_matcher svo)
+ADD_EXECUTABLE(depthtow test/getcloudfromdepth.cpp)
+TARGET_LINK_LIBRARIES(depthtow ${OpenCV_LIBS})
 
-ADD_EXECUTABLE(test_feature_detection test/test_feature_detection.cpp)
-TARGET_LINK_LIBRARIES(test_feature_detection svo)
+ADD_EXECUTABLE(convbund test/convBundle.cpp)
+TARGET_LINK_LIBRARIES(convbund ${OpenCV_LIBS})
 
-ADD_EXECUTABLE(test_depth_filter test/test_depth_filter.cpp)
-TARGET_LINK_LIBRARIES(test_depth_filter svo)
+#ADD_EXECUTABLE(test_matcher test/test_matcher.cpp)
+#TARGET_LINK_LIBRARIES(test_matcher svo)
 
-ADD_EXECUTABLE(test_sparse_img_align test/test_sparse_img_align.cpp)
-TARGET_LINK_LIBRARIES(test_sparse_img_align svo)
+#ADD_EXECUTABLE(test_feature_detection test/test_feature_detection.cpp)
+#TARGET_LINK_LIBRARIES(test_feature_detection svo)
 
-ADD_EXECUTABLE(test_pose_optimizer test/test_pose_optimizer.cpp)
-TARGET_LINK_LIBRARIES(test_pose_optimizer svo) 
+#ADD_EXECUTABLE(test_depth_filter test/test_depth_filter.cpp)
+#TARGET_LINK_LIBRARIES(test_depth_filter svo)
+
+#ADD_EXECUTABLE(test_sparse_img_align test/test_sparse_img_align.cpp)
+#TARGET_LINK_LIBRARIES(test_sparse_img_align svo)
+
+#ADD_EXECUTABLE(test_pose_optimizer test/test_pose_optimizer.cpp)
+#TARGET_LINK_LIBRARIES(test_pose_optimizer svo) 
